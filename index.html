@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HIGH VISIBILITY RACING TRACK BACKGROUND ANIMATION -->
+    <div class="race-track">
+        <div class="car lane-1">
+            <span class="car-emoji">🏎️💨</span>
+            <span class="car-label">AUDI RS7</span>
+        </div>
+        <div class="car lane-2">🏎️</div>
+        <div class="car lane-3">🏎️</div>
+    </div>
+
+    <!-- SECTION 1: THE ENVELOPE / INTRO CONTAINER -->
+    <div class="envelope-wrapper" id="envelopeSection">
+        <h1 class="title">Happy Birthday❤️</h1>
+        <div class="envelope" onclick="openEnvelope()">
+            <div class="flap"></div>
+            <div class="pocket"></div>
+            <div class="letter">
+                <p>🏁Born to race, built to win🏎️💨</p>
+            </div>
+            <div class="seal">⚡</div>
+        </div>
+        <p class="instruction">Click to start your engine... 🏎️💨</p>
+    </div>
+
+    <!-- SECTION 2: THE MAIN NEON DASHBOARD MENU -->
+    <div class="gift-menu hidden" id="giftMenu">
+        
+        <!-- RACING COUNTDOWN TIMER -->
+        <div class="countdown-container">
+            <p class="countdown-label">🥂 WEEKEND COUNTDOWN ⌛</p>
+            <div id="countdownClock">00d : 00h : 00m : 00s</div>
+        </div>
+
+        <h2>These are for you</h2>
+        <div class="menu-icons">
+            <div class="icon-card" onclick="scrollToSection('message')">
+                <span>✉️</span>
+                <p>Message</p>
+            </div>
+            <div class="icon-card" onclick="scrollToSection('photos')">
+                <span>📸</span>
+                <p>Memories</p>
+            </div>
+            <div class="icon-card" onclick="scrollToSection('music')">
+                <span>🎬</span>
+                <p>Our Video</p>
+            </div>
+            <div class="icon-card" onclick="scrollToSection('garage')">
+                <span>🛠️</span>
+                <p>The Garage</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: THE CONTENT DISPLAY PAGES -->
+    <div class="content-container hidden" id="contentPages">
+        
+        <!-- Message Page -->
+        <section id="message" class="page hidden">
+            <div class="card">
+                <h3>To My Lover Boy 😉 Gangster 🤫</h3>
+                <p class="letter-text">
+                    I Want To Spend My Whole Life With You. Happy Birthday 🎂<br><br>
+                    If I were with you right now ⏰ I’d be hugging you 🤗 kissing you 😘 and annoying you 😄 by screaming at least six different variations of "<i>happy birthday</i>" 🍰 until you laughed 😂<br><br>
+                    But since I'm not 🥺 I'm going to spoil you with words instead 💌<br><br>
+                    First of all 🤩 I'm so proud of the person you are today ☺️ Every year you grow a little more 🥹 learn a little more 📒 and become someone even more incredible 🫰 And I'm so lucky that I get the front-row seat 💺<br><br>
+                    I hope today feels full - full of Love 💕 full of warmth ✨ full of people who appreciate you the way you deserve 🥳<br><br>
+                    You're one of the most thoughtful ✨ quietly strong 💪 genuinely good people I know 🥂 And this world 🌍 is a better place because you're in it 😎<br><br>
+                    Make a wish 🧞‍♂️ (and yes, I better be part of it 😂😂)<br><br>
+                    Celebrate yourself today 🎊 You deserve that and more 🏆<br><br>
+                    Enjoy your day 😉 I'm thinking about you 💭 and wishing I could be there to celebrate 🍾 with you in person 💖 But we'll make up for it this weekend 💯 I promise 🤞<br><br>
+                    Happy Birthday again 🎂 Papichullo 😝<br><br>
+                    Lots of love ❤️<br>
+                    <strong>Mama Bear 🐻</strong>
+                </p>
+                
+                <!-- NITRO BOOST WISH LAUNCHER BUTTON -->
+                <div style="text-align: center; margin: 25px 0 10px 0;">
+                    <button id="nitroBtn" onclick="launchNitroWish()" style="background: #ff1800; color: #020c1b; border: none; padding: 14px 35px; box-shadow: 0 0 20px #ff1800; font-size: 1rem; border-radius: 5px; cursor: pointer; font-family: 'Orbitron', sans-serif; font-weight: bold; text-transform: uppercase;">
+                        🚀 NITRO BOOST WISH
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button onclick="backToMenu()">Back to Menu</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photos Page -->
+        <section id="photos" class="page hidden">
+            <h3>Our Favorite Moments</h3>
+            <div class="photo-grid">
+                <div class="photo-frame"><img src="Photo 1.jpeg" alt="Memory 1"></div>
+                <div class="photo-frame"><img src="Photo 2.jpeg" alt="Memory 2"></div>
+                <div class="photo-frame"><img src="Photo 3.jpeg" alt="Memory 3"></div>
+                <div class="photo-frame"><img src="Photo 4.jpeg" alt="Memory 4"></div>
+                <div class="photo-frame"><img src="Photo 5.jpeg" alt="Memory 5"></div>
+                <div class="photo-frame"><img src="Photo 6.jpeg" alt="Memory 6"></div>
+                <div class="photo-frame"><img src="Photo 7.jpeg" alt="Memory 7"></div>
+                <div class="photo-frame"><img src="Photo 8.jpeg" alt="Memory 8"></div>
+                <div class="photo-frame"><img src="Photo 9.jpeg" alt="Memory 9"></div>
+                <div class="photo-frame"><img src="Photo 10.jpeg" alt="Memory 10"></div>
+                <div class="photo-frame"><img src="Photo 11.jpeg" alt="Memory 11"></div>
+                <div class="photo-frame"><img src="Photo 12.jpeg" alt="Memory 12"></div>
+                <div class="photo-frame"><img src="Photo 13.jpeg" alt="Memory 13"></div>
+                <div class="photo-frame"><img src="Photo 14.jpeg" alt="Memory 14"></div>
+                <div class="photo-frame"><img src="Photo 15.jpeg" alt="Memory 15"></div>
+            </div>
+            <button onclick="backToMenu()">Back to Menu</button>
+        </section>
+
+        <!-- Video Page -->
+        <section id="music" class="page">
+            <h3>Our Favorite Video 🎬</h3>
+            <div class="video-container" style="width: 100%; max-width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid #00d2ff; box-shadow: 0 0 15px rgba(0, 210, 255, 0.3); margin-bottom: 15px; background: #000;">
+                <!--HTML5 Video Player playing your local video file directly-->
+                <video width="100%" controls style="display: block;">
+                    <source src="Our Video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <button onclick="backToMenu()">Back to Menu</button>
+        </section>
+
+        <!-- THE VEHICLE SPECIFICATION GARAGE PAGE -->
+        <section id="garage" class="page hidden">
+            <h3>Vehicle Diagnostics & Specs 🛠️</h3>
+            <div class="card" style="border-top-color: #39ff14;">
+                <div class="letter-text" style="font-family: 'Orbitron', sans-serif; font-size: 0.9rem;">
+                    <p style="color: #39ff14; border-bottom: 1px dashed #39ff14; padding-bottom: 10px; font-weight: bold; margin-bottom: 15px;">
+                        📋 PERFORMANCE SPECIFICATION SHEET
+                    </p>
+                    <p style="margin-bottom: 12px;"><strong style="color: #00d2ff;">MODEL:</strong> Lover Boy Gangster (2023 Edition) 🏁</p>
+                    <p style="margin-bottom: 12px;"><strong style="color: #00d2ff;">CHASSIS NO:</strong> QUIETLY-STRONG-💪</p>
+                    <p style="margin-bottom: 12px;"><strong style="color: #00d2ff;">ENGINE TYPE:</strong> Pure Gold & Infinite Warmth ❤️</p>
+                    <p style="margin-bottom: 12px;"><strong style="color: #00d2ff;">MAX SPEED:</strong> Completely Unstoppable when focused 🏎️💨</p>
+                    <p style="margin-bottom: 12px;"><strong style="color: #00d2ff;">FUEL SOURCE:</strong> Love, Ambition, and Sweet Treats 🍰</p>
+                    
+                    <p style="color: #39ff14; border-bottom: 1px dashed #39ff14; padding-bottom: 5px; font-weight: bold; margin: 20px 0 15px 0;">
+                        ⚙️ FACTORY STANDARD FEATURES
+                    </p>
+                    <ul style="list-style: none; padding-left: 5px; color: #ccd6f6; line-height: 1.8;">
+                        <li>✔️ Certified Premium Hugs 🤗 (Best in class)</li>
+                        <li>✔️ Highly advanced listening & support matrix ✨</li>
+                        <li>✔️ Built-in laugh generator to deal with Mama Bear 🐻</li>
+                        <li>✔️ Flawless Papichullo exterior styling 😝</li>
+                    </ul>
+                    
+                    <p style="text-align: center; color: #ff1800; font-weight: bold; margin-top: 25px; letter-spacing: 1px; font-size: 0.85rem;">
+                        ⚠️ VERDICT: 10/10 PERFECT SPECS. NO MODIFICATIONS REQUIRED.
+                    </p>
+                </div>
+                <div style="text-align: center;">
+                    <button onclick="backToMenu()">Back to Menu</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- INLINE FAIL-SAFE JAVASCRIPT CONTROLS -->
+    <script>
+        function openEnvelope() {
+            const envelope = document.querySelector('.envelope');
+            const envelopeSection = document.getElementById('envelopeSection');
+            const giftMenu = document.getElementById('giftMenu');
+
+            envelope.classList.add('open');
+
+            setTimeout(() => {
+                envelopeSection.classList.add('hidden');
+                giftMenu.classList.remove('hidden');
+            }, 1200);
+        }
+
+        function scrollToSection(sectionId) {
+            const giftMenu = document.getElementById('giftMenu');
+            const contentPages = document.getElementById('contentPages');
+            const sections = document.querySelectorAll('.page');
+
+            giftMenu.classList.add('hidden');
+            contentPages.classList.remove('hidden');
+
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+        }
+
+        function backToMenu() {
+            const giftMenu = document.getElementById('giftMenu');
+            const contentPages = document.getElementById('contentPages');
+
+            contentPages.classList.add('hidden');
+            giftMenu.classList.remove('hidden');
+        }
+
+        function launchNitroWish() {
+            const emojis = ['🏎️', '🔥', '🎂', '🎉', '❤️', '💨', '✨', '👑', '🍾'];
+            
+            for (let i = 0; i < 40; i++) {
+                const confetti = document.createElement('div');
+                confetti.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                confetti.style.position = 'fixed';
+                confetti.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+                confetti.style.left = (Math.random() * 100) + 'vw';
+                confetti.style.bottom = '-50px';
+                confetti.style.zIndex = '9999';
+                confetti.style.pointerEvents = 'none';
+                confetti.style.transition = 'all ' + (Math.random() * 2 + 1.5) + 's ease-out';
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.style.transform = 'translateY(-110vh) rotate(' + (Math.random() * 360) + 'deg)';
+                    confetti.style.opacity = '0';
+                }, 50);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3500);
+            }
+        }
+
+        // Setup Countdown target timer
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + ((5 - targetDate.getDay() + 7) % 7)); 
+        targetDate.setHours(18, 0, 0, 0);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate.getTime() - now;
+
+            if (difference < 0) {
+                document.getElementById('countdownClock').innerText = "IT'S RACE WEEKEND! 🏎️💨";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            const dStr = days.toString().padStart(2, '0') + 'd';
+            const hStr = hours.toString().padStart(2, '0') + 'h';
+            const mStr = minutes.toString().padStart(2, '0') + 'm';
+            const sStr = seconds.toString().padStart(2, '0') + 's';
+
+            document.getElementById('countdownClock').innerText = `${dStr} : ${hStr} : ${mStr} : ${sStr}`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>

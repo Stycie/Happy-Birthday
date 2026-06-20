@@ -1,0 +1,423 @@
+/* ==========================================
+   1. GLOBAL STYLES & NEON THEME SETUP
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Forces the absolute root of the page to be dark neon blue */
+html {
+    background-color: #020813 !important;
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Rich, vibrant midnight neon base background */
+    background: linear-gradient(135deg, #020813 0%, #051329 100%) !important;
+    background-attachment: fixed !important; /* Keeps the gradient smooth while scrolling */
+    color: #00d2ff !important; 
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Force all text headers to glow neon blue */
+h1, h2, h3, .title, .envelope-wrapper h1, #envelopeSection h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00d2ff !important;
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.8), 0 0 5px rgba(0, 210, 255, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ==========================================
+   2. HIGH VISIBILITY RACING TRACK BACKGROUND ANIMATION
+   ========================================== */
+.race-track {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.15;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 40px,
+        rgba(225, 225, 255, 0.05) 40px,
+        rgba(225, 225, 255, 0.05) 41px
+    );
+}
+
+.car {
+    position: absolute;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.car-lane {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: #00d2ff;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.lane-1 { top: 20%; animation: race 12s linear infinite; }
+.lane-2 { top: 50%; animation: race 8s linear infinite reverse; }
+.lane-3 { top: 80%; animation: race 15s linear infinite; }
+
+@keyframes race {
+    0% { left: -150%; }
+    100% { left: 100vw; }
+}
+
+/* ===========================+===============
+   3. START ENGINE / ENVELOPE CONTROLS
+   ========================================== */
+.envelope-wrapper, #envelopeSection, .entry-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+    background: rgba(11, 22, 44, 0.85); 
+    border: 2px solid #00d2ff; 
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.5);
+}
+
+.envelope-wrapper p, #envelopeSection p, .instruction {
+    color: #00d2ff !important;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.envelope {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    background: #112240;
+    border: 2px solid #00d2ff; 
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    cursor: pointer;
+    margin: 20px auto;
+    transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 100px solid #233554;
+    transform-origin: top;
+    transition: transform 0.4s ease 0.2s;
+    z-index: 3;
+}
+
+.pocket {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-left: 140px solid #1d2d44;
+    border-right: 140px solid #1d2d44;
+    border-bottom: 90px solid #233554;
+    border-radius: 0 0 10px 10px;
+    z-index: 2;
+}
+
+.letter {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 260px;
+    height: 160px;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 1;
+    transition: transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letter p {
+    color: #020c1b !important;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-shadow: none !important;
+    margin: 0 !important;
+}
+
+.seal {
+    position: absolute;
+    top: 80px;
+    left: 125px;
+    width: 35px;
+    height: 35px;
+    background: #00d2ff;
+    border-radius: 50%;
+    color: #020c1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 4;
+    box-shadow: 0 0 15px #00d2ff;
+}
+
+.envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
+.envelope.open .letter { transform: translateY(-100px); z-index: 2; }
+
+/* ==========================================
+   4. THE MAIN NEON DASHBOARD MENU
+   ========================================== */
+.gift-menu {
+    text-align: center;
+    max-width: 600px; 
+    width: 100%;
+    animation: fadeIn 0.6s ease-in-out;
+    margin: 0 auto;
+}
+
+.menu-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    margin-top: 20px;
+}
+
+@media (min-width: 600px) {
+    .menu-icons {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+.icon-card {
+    background: #112240;
+    border: 2px solid #00d2ff;
+    border-radius: 12px;
+    padding: 20px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+
+.icon-card:hover {
+    border-color: #ff1800;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 24, 0, 0.5);
+}
+
+.icon-card span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.icon-card p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ccd6f6 !important;
+}
+
+/* ==========================================
+   5. CONTENT DISPLAY PAGES & CARDS
+   ========================================== */
+.content-container {
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease;
+    margin: 0 auto;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    font-family: 'Orbitron', sans-serif;
+    background: transparent;
+    border: 2px solid #ff1800;
+    color: #ff1800 !important;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(255, 24, 0, 0.2);
+}
+
+button:hover {
+    background: #ff1800;
+    color: #020c1b !important;
+    box-shadow: 0 0 20px rgba(255, 24, 0, 0.6);
+}
+
+.card {
+    background: #112240;
+    border: 2px solid #00d2ff;
+    border-top: 6px dashed #ff1800; 
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.3);
+}
+
+.letter-text {
+    line-height: 1.8;
+    font-size: 0.95rem;
+    text-align: left;
+    color: #ccd6f6 !important;
+}
+
+/* ==========================================
+   6. PHOTO GRID (UN-CROPPED & HIGH CLARITY)
+   ========================================== */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    width: 100%;
+    max-height: 65vh; 
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.photo-grid::-webkit-scrollbar { width: 6px; }
+.photo-grid::-webkit-scrollbar-thumb { background-color: #00d2ff; border-radius: 10px; }
+
+.photo-frame {
+    background: #ffffff;
+    padding: 10px 10px 25px 10px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transform: rotate(var(--rotation, 0deg));
+    transition: transform 0.3s ease;
+    background-color: #1a1a1a; 
+    border: 4px solid #fff;
+}
+
+.photo-frame:hover {
+    transform: scale(1.08) rotate(0deg) !important;
+    z-index: 10;
+}
+
+.photo-frame:nth-child(odd) { --rotation: -2deg; }
+.photo-frame:nth-child(even) { --rotation: 2deg; }
+
+.photo-frame img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; 
+    display: block;
+    background: #112240;
+}
+
+/* ==========================================
+   7. VIDEO PLAYER NEON FRAME
+   ========================================== */
+.video-container {
+    width: 100%;
+    background: #000000;
+    border-radius: 16px;
+    border: 2px solid #00d2ff;
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    max-height: 450px;
+    display: block;
+}
+
+/* ==========================================
+   8. UTILITIES & RESPONSIVENESS
+   ========================================== */
+.hidden { 
+    display: none !important; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    .photo-grid { grid-template-columns: 1fr; }
+    .card { padding: 20px; }
+}
+
+/* ==========================================
+   9. RACING TIMER DISPLAY
+   ========================================== */
+.countdown-container {
+    background: rgba(2, 8, 19, 0.9);
+    border: 2px dashed #ff1800;
+    box-shadow: 0 0 15px rgba(255, 24, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.countdown-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #ff1800 !important;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#countdownClock {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #39ff14 !important;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    letter-spacing: 1px;
+}
+
+#nitroBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ff1800 !important;
+    transition: all 0.2s ease-in-out;
+}
