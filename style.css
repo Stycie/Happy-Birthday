@@ -16,19 +16,24 @@ html {
 }
 
 body {
+    /* This sets the image as your background */
+    background-image: url('Background.jpeg') !important;
+    background-size: cover;          /* Ensures the image fills the screen */
+    background-position: center;     /* Keeps the car centered */
+    background-attachment: fixed;    /* Keeps the image still while you scroll */
+    background-repeat: no-repeat;
+    
+    /* IMPORTANT: This adds a dark tint so your text is readable */
+    background-color: rgba(2, 8, 19, 0.8) !important;
+    background-blend-mode: overlay;
+    
     font-family: 'Poppins', sans-serif;
-    /* Rich, vibrant midnight neon base background */
-    background: linear-gradient(135deg, #020813 0%, #051329 100%) !important;
-    background-attachment: fixed !important; /* Keeps the gradient smooth while scrolling */
-    color: #00d2ff !important; 
     min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden;
-    padding: 20px;
 }
 
 /* Force all text headers to glow neon blue */
@@ -42,53 +47,9 @@ h1, h2, h3, .title, .envelope-wrapper h1, #envelopeSection h1 {
     text-align: center;
 }
 
-/* ==========================================
-   2. HIGH VISIBILITY RACING TRACK BACKGROUND ANIMATION
-   ========================================== */
-.race-track {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0.15;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 40px,
-        rgba(225, 225, 255, 0.05) 40px,
-        rgba(225, 225, 255, 0.05) 41px
-    );
-}
-
-.car {
-    position: absolute;
-    font-size: 2rem;
-    white-space: nowrap;
-}
-
-.car-lane {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.7rem;
-    color: #00d2ff;
-    display: block;
-    text-align: center;
-    margin-top: 5px;
-}
-
-.lane-1 { top: 20%; animation: race 12s linear infinite; }
-.lane-2 { top: 50%; animation: race 8s linear infinite reverse; }
-.lane-3 { top: 80%; animation: race 15s linear infinite; }
-
-@keyframes race {
-    0% { left: -150%; }
-    100% { left: 100vw; }
-}
 
 /* ===========================+===============
-   3. START ENGINE / ENVELOPE CONTROLS
+   2. START ENGINE / ENVELOPE CONTROLS
    ========================================== */
 .envelope-wrapper, #envelopeSection, .entry-container {
     display: flex !important;
@@ -201,7 +162,7 @@ h1, h2, h3, .title, .envelope-wrapper h1, #envelopeSection h1 {
 .envelope.open .letter { transform: translateY(-100px); z-index: 2; }
 
 /* ==========================================
-   4. THE MAIN NEON DASHBOARD MENU
+   3. THE MAIN NEON DASHBOARD MENU
    ========================================== */
 .gift-menu {
     text-align: center;
@@ -254,7 +215,7 @@ h1, h2, h3, .title, .envelope-wrapper h1, #envelopeSection h1 {
 }
 
 /* ==========================================
-   5. CONTENT DISPLAY PAGES & CARDS
+   4. CONTENT DISPLAY PAGES & CARDS
    ========================================== */
 .content-container {
     width: 100%;
@@ -309,7 +270,7 @@ button:hover {
 }
 
 /* ==========================================
-   6. PHOTO GRID (UN-CROPPED & HIGH CLARITY)
+   5. PHOTO GRID (UN-CROPPED & HIGH CLARITY)
    ========================================== */
 .photo-grid {
     display: grid;
@@ -351,7 +312,7 @@ button:hover {
 }
 
 /* ==========================================
-   7. VIDEO PLAYER NEON FRAME
+   6. VIDEO PLAYER NEON FRAME
    ========================================== */
 .video-container {
     width: 100%;
@@ -369,7 +330,7 @@ video {
 }
 
 /* ==========================================
-   8. UTILITIES & RESPONSIVENESS
+   7. UTILITIES & RESPONSIVENESS
    ========================================== */
 .hidden { 
     display: none !important; 
@@ -386,7 +347,7 @@ video {
 }
 
 /* ==========================================
-   9. RACING TIMER DISPLAY
+   8. RACING TIMER DISPLAY
    ========================================== */
 .countdown-container {
     background: rgba(2, 8, 19, 0.9);
