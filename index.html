@@ -28,7 +28,7 @@
         
         <!-- RACING COUNTDOWN TIMER -->
         <div class="countdown-container">
-            <p class="countdown-label">🥂 WEEKEND COUNTDOWN ⌛</p>
+            <p class="countdown-label">Birthday mode: ACTIVATED🎂</p>
             <div id="countdownClock">00d : 00h : 00m : 00s</div>
         </div>
 
@@ -160,6 +160,11 @@
 
     </div>
 
+    <!--ADD THE CHECKERED FLAG OVERLAY HERE-->
+    <div id="checkered-overlay" class="hidden">
+        <div class="checkered-flag"></div>
+    </div>
+
     <!-- INLINE FAIL-SAFE JAVASCRIPT CONTROLS -->
     <script>
         function openEnvelope() {
@@ -230,15 +235,17 @@
 
         // Setup Countdown target timer
         const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + ((5 - targetDate.getDay() + 7) % 7)); 
-        targetDate.setHours(18, 0, 0, 0);
+        targetDate.setDate(targetDate.getDate() + ((4 - targetDate.getDay() + 7) % 7)); 
+        targetDate.setHours(9, 20, 0, 0);
 
         function updateCountdown() {
             const now = new Date().getTime();
             const difference = targetDate.getTime() - now;
 
             if (difference < 0) {
-                document.getElementById('countdownClock').innerText = "IT'S RACE WEEKEND! 🏎️💨";
+                document.getElementById('countdownClock').innerText = "🤩It's time to Make a wish🎂";
+                // Add this line to show the flag
+                document.getElementById('checkered-overlay').classList.remove('hidden');
                 return;
             }
 

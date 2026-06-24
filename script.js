@@ -74,17 +74,19 @@ function launchNitroWish() {
 }
 
 // RUNTIME PIT-WALL TIMER LOGIC
-// Set target to this coming Friday night at 6:00 PM for the weekend kickoff!
+// Set target to this coming Thursday morning at 9:20am for the weekend kickoff!
 const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + ((5 - targetDate.getDay() + 7) % 7)); 
-targetDate.setHours(18, 0, 0, 0);
+targetDate.setDate(targetDate.getDate() + ((4 - targetDate.getDay() + 7) % 7)); 
+targetDate.setHours(9, 20, 0, 0);
 
 function updateCountdown() {
     const now = new Date().getTime();
     const difference = targetDate.getTime() - now;
 
     if (difference < 0) {
-        document.getElementById('countdownClock').innerText = "IT'S RACE WEEKEND! 🏎️💨";
+        document.getElementById('countdownClock').innerText = "🤩It's time to Make a wish🎂";
+        //Add this line to show the flag
+        document.getElementById('checkered-overlay').classList.remove('hidden');
         return;
     }
 
