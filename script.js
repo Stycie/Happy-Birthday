@@ -77,7 +77,7 @@ function launchNitroWish() {
 // Set target to this coming Thursday Afternoon at 01:00pm for the weekend kickoff!
 const targetDate = new Date();
 targetDate.setDate(targetDate.getDate() + ((4 - targetDate.getDay() + 7) % 7)); 
-targetDate.setHours(13, 0, 0, 0);
+targetDate.setHours(14, 45, 0, 0);
 
 function updateCountdown() {
     const now = new Date().getTime();
